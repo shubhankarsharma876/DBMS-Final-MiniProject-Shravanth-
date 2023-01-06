@@ -1,0 +1,17 @@
+aheader and adformheader are same
+
+In appointmentdetail.php room details available remove later
+
+In admin module Medicine field missing check later
+
+Check with Appointment Department
+
+Billing time not working correctly
+
+billing.php see where it is used
+
+contactus.php not used
+
+forgot password not working
+
+index.php should be modified
