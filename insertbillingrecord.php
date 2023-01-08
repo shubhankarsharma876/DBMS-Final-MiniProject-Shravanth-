@@ -1,5 +1,6 @@
 <?php
 include("dbconnection.php");
+date_default_timezone_set("Asia/Kolkata");
 $dt = date("Y-m-d");
 $tim = date("H:i:s");
 //LAST APPOINTMENT ID
@@ -23,18 +24,18 @@ else
 	$billid = $rsbill[0];
 }
 
-if($billtype == "Room Rent")
-{
-	if( $roomid != "" )
-	{
-		$sqlroomtariff = "SELECT * FROM room WHERE roomid='$roomid'";
-		$qsqlroomtariff = mysqli_query($con,$sqlroomtariff);
-		$rsroomtariff = mysqli_fetch_array($qsqlroomtariff);
-	//Room tariff
-	$sql ="INSERT INTO billing_records( billingid, bill_type_id, bill_type, bill_amount, bill_date, status) VALUES ('$billid','$roomid','Room Rent','$rsroomtariff[room_tariff]','$dt','Active')";
-	$qsql=mysqli_query($con,$sql);
-	}
-}
+// if($billtype == "Room Rent")
+// {
+// 	if( $roomid != "" )
+// 	{
+// 		$sqlroomtariff = "SELECT * FROM room WHERE roomid='$roomid'";
+// 		$qsqlroomtariff = mysqli_query($con,$sqlroomtariff);
+// 		$rsroomtariff = mysqli_fetch_array($qsqlroomtariff);
+// 	//Room tariff
+// 	$sql ="INSERT INTO billing_records( billingid, bill_type_id, bill_type, bill_amount, bill_date, status) VALUES ('$billid','$roomid','Room Rent','$rsroomtariff[room_tariff]','$dt','Active')";
+// 	$qsql=mysqli_query($con,$sql);
+// 	}
+// }
 
 if($billtype == "Doctor Charge" && $billtype1="Treatment Cost")
 {

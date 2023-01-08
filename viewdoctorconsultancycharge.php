@@ -49,13 +49,13 @@ if(isset($_GET[delid]))
 					}
 
 
-					if($rs[bill_type]== "Room Rent")
-					{
-						$sqlroomtariff = "SELECT * FROM room WHERE roomid='$rs[bill_type_id]'";
-						$qsqlroomtariff = mysqli_query($con,$sqlroomtariff);
-						$rsroomtariff = mysqli_fetch_array($qsqlroomtariff);
-						echo " : ". $rsroomtariff[roomtype] .  "- Room No." . $rsroomtariff[roomno];
-					}
+					// if($rs[bill_type]== "Room Rent")
+					// {
+					// 	$sqlroomtariff = "SELECT * FROM room WHERE roomid='$rs[bill_type_id]'";
+					// 	$qsqlroomtariff = mysqli_query($con,$sqlroomtariff);
+					// 	$rsroomtariff = mysqli_fetch_array($qsqlroomtariff);
+					// 	echo " : ". $rsroomtariff[roomtype] .  "- Room No." . $rsroomtariff[roomno];
+					// }
 
 					if($rs[bill_type] == "Consultancy Charge")
 					{

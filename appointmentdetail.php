@@ -40,9 +40,9 @@ else
 	$qsqlappointment = mysqli_query($con,$sqlappointment);
 	$rsappointment=mysqli_fetch_array($qsqlappointment);
 	
-	$sqlroom = "SELECT * FROM room where roomid='$rsappointment[roomid]' ";
-	$qsqlroom = mysqli_query($con,$sqlroom);
-	$rsroom =mysqli_fetch_array($qsqlroom);
+	// $sqlroom = "SELECT * FROM room where roomid='$rsappointment[roomid]' ";
+	// $qsqlroom = mysqli_query($con,$sqlroom);
+	// $rsroom =mysqli_fetch_array($qsqlroom);
 	
 	$sqldepartment = "SELECT * FROM department where departmentid='$rsappointment[departmentid]'";
 	$qsqldepartment = mysqli_query($con,$sqldepartment);
@@ -85,12 +85,12 @@ function validateform()
 		document.frmappntdetail.select.focus();
 		return false;
 	}
-	else if(document.frmappntdetail.select2.value == "")
-	{
-		alert("Room type should not be empty..");
-		document.frmappntdetail.select2.focus();
-		return false;
-	}
+	// else if(document.frmappntdetail.select2.value == "")
+	// {
+	// 	alert("Room type should not be empty..");
+	// 	document.frmappntdetail.select2.focus();
+	// 	return false;
+	// }
 	else if(document.frmappntdetail.select3.value == "")
 	{
 		alert("Department name should not be empty..");

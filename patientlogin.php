@@ -3,6 +3,7 @@
 session_start();
 error_reporting(0);
 include("dbconnection.php");
+date_default_timezone_set("Asia/Kolkata");
 $dt = date("Y-m-d");
 $tim = date("H:i:s");
 
@@ -75,10 +76,10 @@ if(isset($_POST[submit]))
                         <input type="checkbox" name="rememberme" id="rememberme" class="filled-in chk-col-pink">
                         <label for="rememberme">Remember Me</label>
                     </div>
+					</div> -->
                     <div class="text-center">
 					<input type="submit" name="submit" id="submit" value="Login" class="btn btn-raised waves-effect g-bg-cyan" /></div>
-                    <div class="text-center"> <a href="forgot-password.html">Forgot Password?</a></div>
-                </div> -->
+                    <div class="text-center"> <a href="patientcreatenewaccount.php">Create New Account?</a></div>
             </form>
         </div>
     </div>    
