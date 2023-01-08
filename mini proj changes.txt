@@ -1,6 +1,7 @@
-aheader and adformheader are same
 
-In appointmentdetail.php room details available remove later
+aheader and adformheader are same(done)
+
+In appointmentdetail.php room details available remove later(not mandatory)
 
 In admin module Medicine field missing check later
 
@@ -10,8 +11,68 @@ Billing time not working correctly
 
 billing.php see where it is used
 
-contactus.php not used
+contacts.php not used
 
 forgot password not working
 
-index.php should be modified
+index.php should be modified(not started)
+
+not yet done insertbillingrecord.php
+
+change color in menu.php also check menu once
+
+patient_profile removed check any errors
+
+patient appointment.php must be redone
+
+patientforgotpassword.php removed
+
+patientprofile.php grey out admission date and time
+
+download google fonts to make standalone
+
+generate pdf in patviewprescription edit using video https://www.youtube.com/watch?v=E0slXWaHGNI and https://www.youtube.com/watch?v=eVUO_RmP3jo
+
+change timezones in all pages available
+date_default_timezone_set("Asia/Kolkata");
+
+payment.php not used anywhere(Not yet added)
+paymentdischarge.php not used
+
+prescriptionorder.php removed(Guess its for ordering medicine) check once.
+
+prescriptionorderdetail.php  and prescriptionorderreport.php removed its same as prescriptionrecord.php
+prescriptionrecord.php print() function to be worked out
+
+
+
+viewtreatmentrecord not working in admin
+
+viewbilling.php not yet included
+
+uploads cannot be downloaded ex: in treatment of treatmentrecord.php
+
+in prescription.php treatmentid is not required i guess
+
+
+
+LEFT OUT PARTS
+about.php(not required)
+admin.php
+billing.php
+contactus.php(not required)
+Forgotpassword.php(not required)
+full-width.php(not required)
+orders.php (not required)
+patient_profile.php(not required)
+patientappointment.php
+patientforgotpassword.php(removed)
+patientorder(not required)
+payment.php
+patientdischarge.php
+room.php(not required)
+style-demo.php(not required)
+viewbilling.php
+viewroom.php (not required)
+
+
