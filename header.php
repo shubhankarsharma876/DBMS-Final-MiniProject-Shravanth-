@@ -1,10 +1,10 @@
-<!-- <?php
+ <?php
 error_reporting(0);
 include("dbconnection.php");
 date_default_timezone_set("Asia/Kolkata");
 $dt = date("Y-m-d");
 $tim = date("H:i:s");
-?> -->
+?> 
 <!doctype html>
 <html class="no-js" lang="en">
 
