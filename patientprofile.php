@@ -49,7 +49,7 @@ if(isset($_SESSION[patientid]))
                                 	<label for="">Admission date</label>
                                     <div class="form-line">
                                     	
-                                        <input class="form-control" type="date" name="admissiondate" id="admissiondate" value="<?php echo $rsedit[admissiondate]; ?> readonly" />
+                                        <input class="form-control" type="date" name="admissiondate" id="admissiondate" value="<?php echo $rsedit[admissiondate]; ?>" readonly />
                                     </div>
                                 </div>
                             </div>
@@ -60,7 +60,7 @@ if(isset($_SESSION[patientid]))
                                 	<label for="admissiontme">Admission time</label>
                                     <div class="form-line">                                 	
                                     	
-                                        <input class="form-control" type="time" name="admissiontme" id="admissiontme" value="<?php echo $rsedit[admissiontime]; ?> readonly" />
+                                        <input class="form-control" type="time" name="admissiontme" id="admissiontme" value="<?php echo $rsedit[admissiontime]; ?>" readonly/>
                                     </div>
                                 </div>
                             </div>

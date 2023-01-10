@@ -51,14 +51,14 @@ $billappointmentid = $_GET[appointmentid];
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <!-- <tr>
               <td>Discharge date</td>
               <td><input class="form-control" name="dischargedate" type="text" id="dischargedate" value="<?php echo date("Y-m-d"); ?>" readonly></td>
             </tr>
             <tr>
               <td>Discharge time</td>
               <td><input class="form-control" name="dischargetime" type="text" id="dischargetime" value="<?php echo date("h:i:s"); ?>" readonly></td>
-            </tr>
+            </tr> -->
             <tr>
               <td>Balance amount</td>
               <td><input class="form-control" name="balamt" type="text" id="balamt" value="<?php echo $balanceamt; ?>" readonly onkeyup="calculatepayable()"></td>
