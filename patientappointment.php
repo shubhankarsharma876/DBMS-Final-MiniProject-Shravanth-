@@ -50,9 +50,9 @@ if(isset($_GET[editid]))
 	$rsedit = mysqli_fetch_array($qsql);
 	
 }
-if(isset($_SESSION[patientid]))
+if(isset($_GET[patientid]))
 {
-    $sqlpatient = "SELECT * FROM patient WHERE patientid='$_SESSION[patientid]' ";
+    $sqlpatient = "SELECT * FROM patient WHERE patientid='$_GET[patientid]' ";
     $qsqlpatient = mysqli_query($con,$sqlpatient);
     $rspatient = mysqli_fetch_array($qsqlpatient);
     $readonly = " readonly";
@@ -88,6 +88,12 @@ if(isset($_SESSION[patientid]))
  }
  else
  {
+    if(isset($_SESSION[patientid])){
+    $sqlpatient = "SELECT * FROM patient WHERE patientid='$_SESSION[patientid]' ";
+    $qsqlpatient = mysqli_query($con,$sqlpatient);
+    $rspatient = mysqli_fetch_array($qsqlpatient);
+    $readonly = " readonly";
+    }
    ?>
         <!-- Content -->
         <div id="content">

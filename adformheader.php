@@ -2,7 +2,6 @@
 session_start();
 error_reporting(0);
 include("dbconnection.php");
-date_default_timezone_set("Asia/Kolkata");
 $dt = date("Y-m-d");
 $tim = date("H:i:s");
 ?>
@@ -121,7 +120,7 @@ $tim = date("H:i:s");
 
 
                     <li> <a href="javascript:void(0);" class="menu-toggle"><i
-                                class="zmdi zmdi-settings-square"></i><span>Services</span> </a>
+                                class="zmdi zmdi-settings-square"></i><span>Service</span> </a>
                         <ul class="ml-menu">
                             <li><a href="department.php">Add Department</a></li>
                             <li><a href="viewdepartment.php">View Department</a></li>
@@ -142,6 +141,7 @@ $tim = date("H:i:s");
             <?php
             if(isset($_SESSION[doctorid]))
             {
+                
             ?>
             <div class="menu">
                 <ul class="list">
@@ -188,7 +188,7 @@ $tim = date("H:i:s");
 
 
                     <li> <a href="javascript:void(0);" class="menu-toggle"><i
-                                class="zmdi zmdi-settings-square"></i><span>Services</span> </a>
+                                class="zmdi zmdi-settings-square"></i><span>Service</span> </a>
                         <ul class="ml-menu">
                             <li><a href="viewtreatmentrecord.php">View Treatment Records</a></li>
                             <li><a href="viewtreatment.php">View Treatment</a></li>
@@ -208,6 +208,7 @@ $tim = date("H:i:s");
             <?php
             if(isset($_SESSION[patientid]))
             {
+                 $x=$_SESSION[patientid];
             ?>
             <div class="menu">
                 <ul class="list">
@@ -227,8 +228,9 @@ $tim = date("H:i:s");
                     <li><a href="javascript:void(0);" class="menu-toggle"><i
                                 class="zmdi zmdi-calendar-check"></i><span>Appointment</span> </a>
                         <ul class="ml-menu">
-                            <li><a href="patientappointment.php" >Add Appointment</a></li>
-                            <li><a href="viewappointment.php" >View Appointments</a></li>
+                              <li><a href="viewappointment.php" >View Appointments</a></li>
+                            <li><a href="patientappointment.php?patientid=<?php echo $x?>" >Add Appointment</a></li>
+                          
                         </ul>
                     </li>
                     <li><a href="javascript:void(0);" class="menu-toggle"><i
