@@ -10,12 +10,12 @@ if(isset($_POST[submit]))
    if($qsql = mysqli_query($con,$sql))
    {
     echo "<script>alert('appointment record updated successfully...');</script>";
-   }
-   else
-   {
+}
+else
+{
     echo mysqli_error($con);
-   }	
-  }
+}	
+}
 else
 {
    $sql ="UPDATE patient SET status='Active' WHERE patientid='$_POST[select4]'";
@@ -105,7 +105,7 @@ if(isset($_GET[editid]))
                                 <div class="form-group">
                                     <div class="form-line">
                                         <select name="select5" id="select5" class=" form-control show-tick">
-                                            <option value="">Select Department</option>
+                                            <option value="">Select Speciality</option>
                                             <?php
                                     $sqldepartment= "SELECT * FROM department WHERE status='Active'";
                                     $qsqldepartment = mysqli_query($con,$sqldepartment);
@@ -141,7 +141,7 @@ if(isset($_GET[editid]))
                             <div class="col-sm-4 col-xs-12">
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input class="form-control" type="time" name="time" id="time"
+                                        <input placeholder="time" class="form-control" type="time" name="time" id="time"
                                             value="<?php echo $rsedit[appointmenttime]; ?>" />
                                     </div>
                                 </div>

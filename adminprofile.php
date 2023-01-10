@@ -61,7 +61,7 @@ if(isset($_SESSION[adminid]))
                             <div class="col-sm-6 col-xs-12">
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input type="text" class="form-control" name="adminname" id="adminname" placeholder="admin name"
+                                        <input placeholder="Admin Name" type="text" class="form-control" name="adminname" id="adminname"
                                             value="<?php echo $rsedit[adminname]; ?>" />
                                     </div>
                                 </div>
@@ -69,7 +69,7 @@ if(isset($_SESSION[adminid]))
                             <div class="col-sm-6 col-xs-12">
                                 <div class="form-group">
                                     <div class="form-line">
-                                        <input type="text" class="form-control" name="loginid" id="loginid" placeholder="loginid"
+                                        <input placeholder="loginid" type="text" class="form-control" name="loginid" id="loginid"
                                             value="<?php echo $rsedit[loginid]; ?>" />
                                     </div>
                                 </div>
