@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 
 ?>
@@ -16,7 +17,7 @@ $tim = date("H:i:s");
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-<title>Hospital Admin</title>
+<title>Admin Login</title>
 <link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -83,7 +84,7 @@ if(isset($_POST[submit]))
                     </div> -->
                     <div class="text-center">
 					<input type="submit" name="submit" id="submit" value="Login" class="btn btn-raised waves-effect g-bg-cyan" /></div>
-                    <div class="text-center"> <a href="forgot-password.html">Forgot Password?</a></div>
+                    <div class="text-center"> <a href="index.html">Go back?</a></div>
                 </div>
             </form>
         </div>

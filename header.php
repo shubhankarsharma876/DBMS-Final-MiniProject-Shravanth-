@@ -45,6 +45,11 @@ $tim = date("H:i:s");
     <![endif]-->
         <script src="sweetalert2.min.js"></script>
         <link rel="stylesheet" href="sweetalert2.min.css">
+        <style >
+           .header-style-2{
+            margin-top:-4% ;
+           }            
+        </style>
     </head>
 
     <body>
@@ -60,9 +65,6 @@ $tim = date("H:i:s");
                 </div>
             </div>
         </div>
-
-
-
         <!-- Header -->
         <header class="header-style-2">
             <!-- <div class="container">
@@ -98,8 +100,8 @@ $tim = date("H:i:s");
                     <!-- NAV -->
                     <div class="collapse navbar-collapse navbar-right" id="nav-open-btn">
                         <ul class="nav">
-                            <li> <a href="index.php">Home </a></li>
-                            <li><a href="about.php">About</a></li>
+                            <li> <a href="index.html">Home </a></li>
+                            <li><a href="about.html">About</a></li>
                             <li><a href="patientappointment.php">Appointment </a></li>
                             <li><a href="contact.php">Contact </a></li>
                             <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Log In </a>

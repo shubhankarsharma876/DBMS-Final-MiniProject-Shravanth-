@@ -18,7 +18,7 @@ $tim = date("H:i:s");
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 <!-- JQuery DataTable Css -->
 <link href="assets/plugins/jquery-datatable/dataTables.bootstrap4.min.css" rel="stylesheet">
-<link href="assets/css/main.css" rel="stylesheet">
+<!-- <link href="assets/css/main.css" rel="stylesheet"> -->
 <!-- Custom Css -->
 
 <!-- Swift Themes. You can choose a theme from css/themes instead of get all themes -->
@@ -26,9 +26,10 @@ $tim = date("H:i:s");
 <script src="sweetalert2.min.js"></script>
 <link rel="stylesheet" href="sweetalert2.min.css">
 <style>
-#navbarid{
-    padding:5px ;
-}
+    .container-fluid{
+        padding:0 ;
+        margin:0 0;
+    }
 </style>
 </head>
 
@@ -49,20 +50,10 @@ $tim = date("H:i:s");
             <p>Please wait...</p>
         </div>
     </div>
-    <!-- #END# Page Loader -->
-    <!-- Overlay For Sidebars -->
-    <div class="overlay"></div>
-    <!-- #END# Overlay For Sidebars -->
 
-    <!-- Morphing Search  -->
-
-    <!-- Top Bar -->
-    <nav id="navbarid" class="navbar clearHeader">
-        <div class="col-12">
-            <div class="navbar-header"> <a href="javascript:void(0);" class="bars"></a> <a class="navbar-brand"
+     <div class="navbar-header"> <a href="javascript:void(0);" class="bars"></a> <a class="navbar-brand"
                     href="#">Hospital Management System</a> </div>
             <ul class="nav navbar-nav navbar-right">
-                <!-- Notifications -->
                 <li>
                     <a data-placement="bottom" title="Full Screen" href="logout.php"><i
                             class="zmdi zmdi-sign-in"></i></a>
@@ -70,28 +61,11 @@ $tim = date("H:i:s");
 
             </ul>
         </div>
-    </nav>
 
-    
-
-<?php
+        <?php
 if(isset($_POST[submit]))
 {
-	// if(isset($_GET[editid]))
-	// {
-	// 	$sql ="UPDATE patient SET patientname='$_POST[patientname]',admissiondate='$_POST[admissiondate]',admissiontime='$_POST[admissiontme]',address='$_POST[address]',mobileno='$_POST[mobilenumber]',city='$_POST[city]',pincode='$_POST[pincode]',loginid='$_POST[loginid]',password='$_POST[password]',bloodgroup='$_POST[select2]',gender='$_POST[select3]',dob='$_POST[dateofbirth]',status='$_POST[select]' WHERE patientid='$_GET[editid]'";
-	// 	if($qsql = mysqli_query($con,$sql))
-	// 	{
-	// 		echo "<script>alert('patient record updated successfully...');</script>";
-	// 	}
-	// 	else
-	// 	{
-	// 		echo mysqli_error($con);
-	// 	}	
-	// }
-	// else
-	// {
-		$sql ="INSERT INTO patient(patientname,admissiondate,admissiontime,address,mobileno,city,pincode,loginid,password,bloodgroup,gender,dob,status) values('$_POST[patientname]','$dt','$tim','$_POST[address]','$_POST[mobilenumber]','$_POST[city]','$_POST[pincode]','$_POST[loginid]','$_POST[password]','$_POST[select2]','$_POST[select3]','$_POST[dateofbirth]','Active')";
+    $sql ="INSERT INTO patient(patientname,admissiondate,admissiontime,address,mobileno,city,pincode,loginid,password,bloodgroup,gender,dob,status) values('$_POST[patientname]','$dt','$tim','$_POST[address]','$_POST[mobilenumber]','$_POST[city]','$_POST[pincode]','$_POST[loginid]','$_POST[password]','$_POST[select2]','$_POST[select3]','$_POST[dateofbirth]','Active')";
 		if($qsql = mysqli_query($con,$sql))
 		{
 			echo "<script>alert('Account created successfully...');</script>";
@@ -111,16 +85,7 @@ if(isset($_POST[submit]))
 		}
 	// }
 }
-// if(isset($_GET[editid]))
-// {
-// 	$sql="SELECT * FROM patient WHERE patientid='$_GET[editid]' ";
-// 	$qsql = mysqli_query($con,$sql);
-// 	$rsedit = mysqli_fetch_array($qsql);
-	
-// }
 ?>
-
-
 <div class="container-fluid">
     <div class="block-header">
         <h2 class="text-center">Patient Registration Panel</h2>

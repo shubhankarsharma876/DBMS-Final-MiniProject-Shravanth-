@@ -40,12 +40,12 @@ if(isset($_GET[delid]))
             {
               echo "<tr>
               <td>&nbsp;$rs[medicinename]</td>
-              <td>&nbsp;$$rs[medicinecost]</td>
+              <td>&nbsp;₹$rs[medicinecost]</td>
               <td>&nbsp;$rs[description]</td>
               <td>&nbsp;$rs[status]</td>
               <td>&nbsp;
               <a href='medicine.php?editid=$rs[medicineid]' class='btn btn-raised bg-green'>Edit</a> 
-              <a href='viewmedicine.php?delid=$rs[medicineid]' class='btn btn-raised bg-blush'>Delete</a></td>
+              <a href='viewmedicine.php?delid=$rs[medicineid]' class='btn btn-raised bg-red'>Delete</a></td>
               </tr>";
             }
             ?>
