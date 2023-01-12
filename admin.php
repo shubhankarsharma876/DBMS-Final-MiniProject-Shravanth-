@@ -164,7 +164,7 @@ function validateform()
 		document.frmadmin.loginid.focus();
 		return false;
 	}
-	else if(!document.frmadmin.loginid.value.match(alphanumericExp))
+	else if(!document.frmadmin.loginid.value.match(emailExp))
 	{
 		alert("Login ID not valid..");
 		document.frmadmin.loginid.focus();

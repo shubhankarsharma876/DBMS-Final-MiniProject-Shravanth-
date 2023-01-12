@@ -351,7 +351,7 @@ function validateform() {
         alert("login ID should not be empty..");
         document.frmpatapp.loginid.focus();
         return false;
-    } else if (!document.frmpatapp.loginid.value.match(alphanumericExp)) {
+    } else if (!document.frmpatapp.loginid.value.match(emailExp)) {
         alert("login ID not valid..");
         document.frmpatapp.loginid.focus();
         return false;

@@ -270,7 +270,7 @@ function validateform() {
         alert("Login ID should not be empty..");
         document.frmpatient.loginid.focus();
         return false;
-    } else if (!document.frmpatient.loginid.value.match(alphanumericExp)) {
+    } else if (!document.frmpatient.loginid.value.match(emailExp)) {
         alert("Login ID not valid..");
         document.frmpatient.loginid.focus();
         return false;

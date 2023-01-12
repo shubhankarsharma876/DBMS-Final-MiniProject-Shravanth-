@@ -59,7 +59,7 @@ if(isset($_GET[editid]))
 
 					<div class="form-group"><label>Mobile Number</label> 
 					<div class="form-line">
-					<input class="form-control" type="text" name="mobilenumber" id="mobilenumber" value="<?php echo $rsedit[mobileno]; ?>"/>
+					<input class="form-control" type="text" name="mobilenumber" maxlength="10" id="mobilenumber" value="<?php echo $rsedit[mobileno]; ?>"/>
 				</div>
 				</div>
 
@@ -211,7 +211,7 @@ function validateform()
 		document.frmdoct.loginid.focus();
 		return false;
 	}
-	else if(!document.frmdoct.loginid.value.match(alphanumericExp))
+	else if(!document.frmdoct.loginid.value.match(emailExp))
 	{
 		alert("loginid not valid..");
 		document.frmdoct.loginid.focus();

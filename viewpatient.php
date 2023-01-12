@@ -69,7 +69,7 @@ mysqli_query($con,$sql);
     <td align='center'>Status - $rs[status] <br>";
         if(isset($_SESSION[adminid]))
         {
-          echo "<ahref='patient.php?editid=$rs[patientid]' class='btn btn-sm btn-raised bg-green'>Edit</a>
+          echo "<a href='patient.php?editid=$rs[patientid]' class='btn btn-sm btn-raised bg-green'>Edit</a>
           <a href='viewpatient.php?delid=$rs[patientid]' class='btn btn-sm btn-raised bg-blush'>Delete</a> <hr>
           <a href='patientreport.php?patientid=$rs[patientid]&appointmentid=$rs[appointmentid]' class='btn btn-sm btn-raised bg-cyan'>View Report</a>";
         }

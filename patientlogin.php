@@ -26,7 +26,7 @@ if(isset($_POST[submit]))
 	else
 	{
 		$err = "<div class='alert alert-danger'>
-		<strong>Oh !</strong> Change a few things up and try submitting again.
+		<strong>Incorrect Credentials</strong> change username and password and try again.
 	</div>";
 	}
 }
@@ -47,6 +47,14 @@ if(isset($_POST[submit]))
 
 <!-- Swift Themes. You can choose a theme from css/themes instead of get all themes -->
 <link href="assets/css/themes/all-themes.css" rel="stylesheet" />
+<style>
+	.theme-cyan{
+		 background-image: url('add files/hms6.jpg');
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: 100% 110%;
+	}
+</style>
 </head>
 <body class="theme-cyan login-page authentication">
 <!-- header section -->
@@ -65,7 +73,7 @@ if(isset($_POST[submit]))
     <form method="post" action="" name="frmadminlogin" id="sign_in" onSubmit="return validateform()">
     <div class="input-group"> <span class="input-group-addon"> <i class="zmdi zmdi-account"></i> </span>
                     <div class="form-line">
-					<input type="text" name="loginid" id="loginid" class="form-control" placeholder="Username" /></div>
+					<input type="text" name="loginid" id="loginid" class="form-control" placeholder="Loginid" /></div>
                 </div>
                 <div class="input-group"> <span class="input-group-addon"> <i class="zmdi zmdi-lock"></i> </span>
                     <div class="form-line">
@@ -80,12 +88,13 @@ if(isset($_POST[submit]))
                     <div class="text-center">
 					<input type="submit" name="submit" id="submit" value="Login" class="btn btn-raised waves-effect g-bg-cyan" /></div>
                     <div class="text-center"> <a href="patientcreatenewaccount.php">Create New Account?</a></div>
+					<div class="text-center"> <a href="index.html">Go back?</a></div>
             </form>
         </div>
     </div>    
 </div>
  <div class="clear"></div>
- <div class="theme-bg"></div>
+ <!-- <div class="theme-bg"></div> -->
   </div>
 </div>
 <script type="application/javascript">

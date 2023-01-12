@@ -177,7 +177,7 @@ function validateform() {
         alert("Login ID should not be empty..");
         document.frmdoctprfl.loginid.focus();
         return false;
-    } else if (!document.frmdoctprfl.loginid.value.match(alphanumericExp)) {
+    } else if (!document.frmdoctprfl.loginid.value.match(emailExp)) {
         alert("loginid not valid..");
         document.frmdoctprfl.loginid.focus();
         return false;

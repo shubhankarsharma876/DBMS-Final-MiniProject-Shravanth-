@@ -134,7 +134,7 @@ function validateform() {
         alert("Login ID should not be empty..");
         document.frmadminprofile.loginid.focus();
         return false;
-    } else if (!document.frmadminprofile.loginid.value.match(alphanumericExp)) {
+    } else if (!document.frmadminprofile.loginid.value.match(emailExp)) {
         alert("Login ID not valid..");
         document.frmadminprofile.loginid.focus();
         return false;

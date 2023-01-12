@@ -12,7 +12,7 @@ if(isset($_POST[submit]))
 		echo "<div class='alert alert-success'>
                             Password has been updated successfully
                         </div>
-                        <script>alert('..');</script>";
+                        <script>alert('Password changed ');</script>";
 	}
 	else
 	{

@@ -13,7 +13,7 @@ if(isset($_GET[delid]))
 }
 ?>
 
-<div id= "printpage" class="container-fluid">
+<div id= "print" class="container-fluid">
    <div class="block-header">
     <h2 class="text-center">View Prescription Record</h2>
    </div>
@@ -98,7 +98,7 @@ if(isset($_GET[delid]))
     ?>        <p>&nbsp;</p>
  </div>
  <!-- testing printpage here  -->
-<div id ="printpage1"></div>
+<div id ="data"></div>
 </div>
  </div>
  <div class="clear"></div>
@@ -110,10 +110,11 @@ include("adfooter.php");
 <script>
   function myFunction()
   {
-    var print = document.getElementbyId('printpage').innerHTML;
-    var print1 = document.getElementbyId('printpage1').innerHTML;
-    document.getElementbyId('printpage').innerHTML=print1;
-    window.print();
+    var print = document.getElementbyId('print').innerHTML;
+    var data = document.getElementbyId('data').innerHTML;
     document.getElementbyId('printpage').innerHTML=print;
- }
+    alert(print);
+//     window.print();
+//     document.getElementbyId('printpage').innerHTML=print;
+  }
 </script>

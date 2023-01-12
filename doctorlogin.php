@@ -25,7 +25,7 @@ if(isset($_POST[submit]))
 	else
 	{
 		$err = "<div class='alert alert-danger'>
-		<strong>Oh !</strong> Change a few things up and try submitting again.
+		<strong>Incorrect Credentials!</strong> Check loginid and password and try again.
 	</div>";
 	}
 }
@@ -47,6 +47,14 @@ if(isset($_POST[submit]))
 
 <!-- Swift Themes. You can choose a theme from css/themes instead of get all themes -->
 <link href="assets/css/themes/all-themes.css" rel="stylesheet" />
+<style>
+	.theme-cyan{
+		 background-image: url('add files/hms5.jpg');
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: 100% 110%;
+	}
+</style>
 </head>
 <body class="theme-cyan login-page authentication">
 <!-- header section -->
@@ -78,14 +86,15 @@ if(isset($_POST[submit]))
                     </div> -->
                     <div class="text-center">
 					<input type="submit" name="submit" id="submit" value="Login" class="btn btn-raised waves-effect g-bg-cyan" /></div>
-                    <div class="text-center"> <a href="forgot-password.html">Forgot Password?</a></div>
+                    <!-- <div class="text-center"> <a href="forgot-password.html">Forgot Password?</a></div> -->
+					<div class="text-center"> <a href="index.html">Go back?</a></div>
                 </div>
             </form>
         </div>
     </div>    
 </div>
  <div class="clear"></div>
- <div class="theme-bg"></div>
+ <!-- <div class="theme-bg"></div> -->
   </div>
 </div>
 <!-- Jquery Core Js --> 
@@ -110,7 +119,7 @@ function validateform()
 		document.frmdoctlogin.loginid.focus();
 		return false;
 	}
-	else if(!document.frmdoctlogin.loginid.value.match(alphanumericExp))
+	else if(!document.frmdoctlogin.loginid.value.match(emailExp))
 	{
 		alert("Login ID not valid..");
 		document.frmdoctlogin.loginid.focus();

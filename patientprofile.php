@@ -78,7 +78,7 @@ if(isset($_SESSION[patientid]))
                                 <div class="form-group">
                                 	<label for="">Mobile number</label>
                                 	<div class="form-line">
-                                    <input class="form-control" type="text" name="mobilenumber" id="mobilenumber" value="<?php echo $rsedit[mobileno]; ?>" />
+                                    <input class="form-control" type="text" name="mobilenumber" maxlength="10" id="mobilenumber" value="<?php echo $rsedit[mobileno]; ?>" />
                                     </div>
                                 </div>
                             </div>
@@ -304,7 +304,7 @@ function validateform()
 	}
 	else if(document.frmpatprfl.password.value != document.frmpatprfl.confirmpassword.value )
 	{
-		alert("Password and confirm password should be equal..");
+		alert("Password and confirm password should be same..");
 		document.frmpatprfl.confirmpassword.focus();
 		return false;
 	}

@@ -27,6 +27,14 @@ $tim = date("H:i:s");
 
 <!-- Swift Themes. You can choose a theme from css/themes instead of get all themes -->
 <link href="assets/css/themes/all-themes.css" rel="stylesheet" />
+<style>
+	.theme-cyan{
+		 background-image: url('images/hms2.jpg');
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-size: 100% 110%;
+	}
+</style>
 </head>
 <body class="theme-cyan login-page authentication">
 <!-- header section -->
@@ -51,7 +59,7 @@ if(isset($_POST[submit]))
 	else
 	{
 		$err = "<div class='alert alert-danger'>
-		<strong>Oh! Change a few things up and try submitting again.</strong>
+		<strong>Incorrect Credentials!</strong>Check Loginid , Password and try again.
 	</div>";
 	}
 }
@@ -91,7 +99,7 @@ if(isset($_POST[submit]))
     </div>    
 </div>
  <div class="clear"></div>
- <div class="theme-bg"></div>
+ <!-- <div class="theme-bg"></div> -->
   </div>
 </div>
 <!-- Jquery Core Js --> 
@@ -112,25 +120,25 @@ function validateform()
 {
 	if(document.frmadminlogin.loginid.value == "")
 	{
-		document.getElementById("err").innerHTML ="<div class='alert alert-info'><strong>Heads up!</strong> Please enter Password</div>";
+		document.getElementById("err").innerHTML ="<div class='alert alert-info'><strong>Heads up!</strong> Please enter Loginid</div>";
 		document.frmadminlogin.loginid.focus();
 		return false;
 	}
-	else if(!document.frmadminlogin.loginid.value.match(alphanumericExp))
+	else if(!document.frmadminlogin.loginid.value.match(emailExp))
 	{
-		document.getElementById("err").innerHTML ="<div class='alert alert-Warning'><strong>Heads up!</strong> Invalid Password</div>";
+		document.getElementById("err").innerHTML ="<div class='alert alert-warning'><strong>Heads up!</strong> Invalid loginid</div>";
 		document.frmadminlogin.loginid.focus();
 		return false;
 	}
 	else if(document.frmadminlogin.password.value == "")
 	{
-		document.getElementById("err").innerHTML ="<div class='alert alert-info'><strong>Heads up!</strong> Should not be empty</div>";
+		document.getElementById("err").innerHTML ="<div class='alert alert-info'><strong>Heads up!</strong>Password should not be empty</div>";
 		document.frmadminlogin.password.focus();
 		return false;
 	}
 	else if(document.frmadminlogin.password.value.length < 8)
 	{
-		document.getElementById("err").innerHTML ="<div class='alert alert-info'><strong>Heads up!</strong> Length should be 8</div>";
+		document.getElementById("err").innerHTML ="<div class='alert alert-info'><strong>Heads up!</strong>Password minimum Length should be 8</div>";
 		document.frmadminlogin.password.focus();
 		return false;
 	}

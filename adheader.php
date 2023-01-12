@@ -116,6 +116,12 @@ $tim = date("H:i:s");
                             <li><a href="viewpatient.php">View Patient Records</a></li>
                         </ul>
                     </li>
+                      <li><a href="javascript:void(0);" class="menu-toggle"><i
+                                class="zmdi zmdi-account-o"></i><span>Queries</span> </a>
+                        <ul class="ml-menu">
+                            <li><a href="viewqueries.php">View Queries</a></li>
+                        </ul>
+                    </li>
 
 
                     <li> <a href="javascript:void(0);" class="menu-toggle toggled waves-effect waves-block"><i

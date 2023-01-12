@@ -2,6 +2,7 @@
 session_start();
 error_reporting(0);
 include("dbconnection.php");
+include("adformheader.php");
 date_default_timezone_set("Asia/Kolkata");
 $dt = date("Y-m-d");
 $tim = date("H:i:s");
@@ -57,12 +58,12 @@ $tim = date("H:i:s");
     <!-- Morphing Search  -->
 
     <!-- Top Bar -->
-    <nav id="navbarid" class="navbar clearHeader">
+    <!-- <nav id="navbarid" class="navbar clearHeader">
         <div class="col-12">
             <div class="navbar-header"> <a href="javascript:void(0);" class="bars"></a> <a class="navbar-brand"
                     href="#">Hospital Management System</a> </div>
             <ul class="nav navbar-nav navbar-right">
-                <!-- Notifications -->
+                
                 <li>
                     <a data-placement="bottom" title="Full Screen" href="logout.php"><i
                             class="zmdi zmdi-sign-in"></i></a>
@@ -70,7 +71,7 @@ $tim = date("H:i:s");
 
             </ul>
         </div>
-    </nav>
+    </nav> -->
 
     
 
@@ -171,7 +172,7 @@ if(isset($_POST[submit]))
 
             <div class="form-group"><label>Mobile Number</label>
                 <div class="form-line">
-                    <input class="form-control" type="text" name="mobilenumber" id="mobilenumber"
+                    <input class="form-control" type="text" name="mobilenumber" id="mobilenumber" maxlength="10"
                         value="<?php echo $rsedit[mobileno]; ?>" />
                 </div>
             </div>
@@ -187,7 +188,7 @@ if(isset($_POST[submit]))
 
             <div class="form-group"><label>PIN Code</label>
                 <div class="form-line">
-                    <input class="form-control" type="text" name="pincode" id="pincode"
+                    <input class="form-control" type="text" name="pincode" id="pincode" maxlength="6"
                         value="<?php echo $rsedit[pincode]; ?>" />
                 </div>
             </div>
@@ -300,83 +301,103 @@ function validateform() {
         alert("Patient name should not be empty..");
         document.frmpatient.patientname.focus();
         return false;
-    } else if (!document.frmpatient.patientname.value.match(alphaspaceExp)) {
+    } 
+    else if (!document.frmpatient.patientname.value.match(alphaspaceExp)) {
         alert("Patient name not valid..");
         document.frmpatient.patientname.focus();
         return false;
-    } else if (document.frmpatient.admissiondate.value == "") {
-        alert("Admission date should not be empty..");
-        document.frmpatient.admissiondate.focus();
-        return false;
-    } else if (document.frmpatient.admissiontme.value == "") {
-        alert("Admission time should not be empty..");
-        document.frmpatient.admissiontme.focus();
-        return false;
-    } else if (document.frmpatient.address.value == "") {
+    } 
+    // else if (document.frmpatient.admissiondate.value == "") {
+    //     alert("Admission date should not be empty..");
+    //     document.frmpatient.admissiondate.focus();
+    //     return false;
+    // } 
+    // else if (document.frmpatient.admissiontme.value == "") {
+    //     alert("Admission time should not be empty..");
+    //     document.frmpatient.admissiontme.focus();
+    //     return false;
+    // } 
+    else if (document.frmpatient.address.value == "") {
         alert("Address should not be empty..");
         document.frmpatient.address.focus();
         return false;
-    } else if (document.frmpatient.mobilenumber.value == "") {
+    } 
+    else if (document.frmpatient.mobilenumber.value == "") {
         alert("Mobile number should not be empty..");
         document.frmpatient.mobilenumber.focus();
         return false;
-    } else if (!document.frmpatient.mobilenumber.value.match(numericExpression)) {
+    } 
+    else if (!document.frmpatient.mobilenumber.value.match(numericExpression)) {
         alert("Mobile number not valid..");
         document.frmpatient.mobilenumber.focus();
         return false;
-    } else if (document.frmpatient.city.value == "") {
+    } 
+    else if (document.frmpatient.city.value == "") {
         alert("City should not be empty..");
         document.frmpatient.city.focus();
         return false;
-    } else if (!document.frmpatient.city.value.match(alphaspaceExp)) {
+    } 
+    else if (!document.frmpatient.city.value.match(alphaspaceExp)) {
         alert("City not valid..");
         document.frmpatient.city.focus();
         return false;
-    } else if (document.frmpatient.pincode.value == "") {
+    } 
+    else if (document.frmpatient.pincode.value == "") {
         alert("Pincode should not be empty..");
         document.frmpatient.pincode.focus();
         return false;
-    } else if (!document.frmpatient.pincode.value.match(numericExpression)) {
+    } 
+    else if (!document.frmpatient.pincode.value.match(numericExpression)) {
         alert("Pincode not valid..");
         document.frmpatient.pincode.focus();
         return false;
-    } else if (document.frmpatient.loginid.value == "") {
+    } 
+    else if (document.frmpatient.loginid.value == "") {
         alert("Login ID should not be empty..");
         document.frmpatient.loginid.focus();
         return false;
-    } else if (!document.frmpatient.loginid.value.match(alphanumericExp)) {
+    } 
+    else if (!document.frmpatient.loginid.value.match(emailExp)) {
         alert("Login ID not valid..");
         document.frmpatient.loginid.focus();
         return false;
-    } else if (document.frmpatient.password.value == "") {
+    } 
+    else if (document.frmpatient.password.value == "") {
         alert("Password should not be empty..");
         document.frmpatient.password.focus();
         return false;
-    } else if (document.frmpatient.password.value.length < 8) {
+    } 
+    else if (document.frmpatient.password.value.length < 8) {
         alert("Password length should be more than 8 characters...");
         document.frmpatient.password.focus();
         return false;
-    } else if (document.frmpatient.password.value != document.frmpatient.confirmpassword.value) {
+    } 
+    else if (document.frmpatient.password.value != document.frmpatient.confirmpassword.value) {
         alert("Password and confirm password should be equal..");
         document.frmpatient.confirmpassword.focus();
         return false;
-    } else if (document.frmpatient.select2.value == "") {
+    } 
+    else if (document.frmpatient.select2.value == "") {
         alert("Blood Group should not be empty..");
         document.frmpatient.select2.focus();
         return false;
-    } else if (document.frmpatient.select3.value == "") {
+    } 
+    else if (document.frmpatient.select3.value == "") {
         alert("Gender should not be empty..");
         document.frmpatient.select3.focus();
         return false;
-    } else if (document.frmpatient.dateofbirth.value == "") {
+    } 
+    else if (document.frmpatient.dateofbirth.value == "") {
         alert("Date Of Birth should not be empty..");
         document.frmpatient.dateofbirth.focus();
         return false;
-    } else if (document.frmpatient.select.value == "") {
+    } 
+    else if (document.frmpatient.select.value == "") {
         alert("Kindly select the status..");
         document.frmpatient.select.focus();
         return false;
-    } else {
+    } 
+    else {
         return true;
     }
 }
