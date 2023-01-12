@@ -18,6 +18,7 @@ $sqlbilling_records ="SELECT * FROM billing WHERE appointmentid='$billappointmen
 $qsqlbilling_records = mysqli_query($con,$sqlbilling_records);
 $rsbilling_records = mysqli_fetch_array($qsqlbilling_records);
 ?>
+<div id="printpage">
  	<table class="table table-bordered table-striped">
       <tbody>
         <tr>
@@ -115,6 +116,7 @@ else
 
      </tbody>
    </table>
+	</div>
 <?php
 }
 ?>   

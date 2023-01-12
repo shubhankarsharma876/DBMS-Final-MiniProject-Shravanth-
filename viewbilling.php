@@ -19,6 +19,7 @@ $sqlbilling_records ="SELECT * FROM billing WHERE appointmentid='$billappointmen
 $qsqlbilling_records = mysqli_query($con,$sqlbilling_records);
 $rsbilling_records = mysqli_fetch_array($qsqlbilling_records);
 ?>
+<div id="printpage1">
  	<table class="table table-bordered table-striped">
       <tbody>
         <tr>
@@ -142,5 +143,6 @@ if($rs[bill_type]  == "Prescription charge")
 	    </tr>
       </tbody>
     </table>
+	</div>
   
     </section>

@@ -198,9 +198,23 @@ jQuery(document).ready(function($) {
 		<p><?php
         $billappointmentid= $rsappointment[0]; 
 		include("viewbilling.php"); ?>
-        </p>
+		 </p>
+				<!-- <input Class="btn btn-raised" type="submit" name="print" id="print" value="Print" onclick="printFunction1()"/>
+		<script>
+	function printFunction1{
+			var printContents = document.getElementById('printpage1').innerHTML;
+			var originalContents = document.body.innerHTML;
+			document.body.innerHTML = printContents;
+			window.print();
+			document.body.innerHTML = originalContents;
+
+	}
+</script>	 -->
+       
+
 	</div><!-- .toggle-content (end) -->
 </div><!-- .toggle (end) -->
+
 
 
 <?php
@@ -228,7 +242,16 @@ if(isset($_SESSION[adminid]))
 				  
 			 
 				  <a class="btn btn-raised" href="paymentdischarge.php?appointmentid=<?php echo $rsappointment[0]; ?>&patientid=<?php echo $_GET[patientid]; ?>">Make Payment</a>
-			
+			<input Class="btn btn-raised" type="submit" name="print" id="print" value="Print" onclick="printFunction()"/>
+<script>
+			function printFunction() {
+ 			var printContents = document.getElementById('printpage').innerHTML;
+			var originalContents = document.body.innerHTML;
+			document.body.innerHTML = printContents;
+			window.print();
+			document.body.innerHTML = originalContents;
+}
+</script>
 			<?php
 	
                 }

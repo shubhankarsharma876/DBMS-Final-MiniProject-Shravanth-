@@ -55,6 +55,7 @@ if(isset($_GET[editid]))
 
 <div class="container-fluid">
 	<div class="block-header"><h2>Add New Prescription Record</h2></div>
+	<div id="printpage">
   <div class="card" style="padding:10px">
  <table class="table table-bordered table-striped">
       <tbody>
@@ -120,9 +121,9 @@ if(isset($_GET[editid]))
         echo "<tr>
           <td>&nbsp;$rs[medicinename]</td>
 		    <td>&nbsp;$rs[dosage]</td>
-          <td>&nbsp;$$rs[cost]</td>
+          <td>&nbsp;₹$rs[cost]</td>
 		   <td>&nbsp;$rs[unit]</td>
-		   <td >$" . $rs[cost] * $rs[unit] . "</td>";
+		   <td >₹" . $rs[cost] * $rs[unit] . "</td>";
 			if(!isset($_SESSION[patientid]))
 			{
 			 echo " <td>&nbsp; <a href='prescriptionrecord.php?delid=$rs[prescription_record_id]&prescriptionid=$_GET[prescriptionid]'>Delete</a> </td>"; 
@@ -133,7 +134,7 @@ if(isset($_GET[editid]))
 		?>
         <tr>
           <th colspan="4" align="right">Grand Total </th>
-		  <th align="right">$<?php echo $gtotal; ?></th>
+		  <th align="right">₹<?php echo $gtotal; ?></th>
 		  <td></td>
           </tr>
         <tr>
@@ -143,6 +144,8 @@ if(isset($_GET[editid]))
           </tr>
       </tbody>
     </table>
+	</div>
+	</div>
 	
 	<table>
 	<tr><td>
@@ -151,7 +154,24 @@ if(isset($_GET[editid]))
 	</table>
 <script>
 function myFunction() {
-    window.print();
+    // window.print();
+			// var divContents = document.getElementById("printpage").innerHTML;
+            // var a = window.open('', '', 'height=500, width=500');
+            // a.document.write('<html>');
+            // a.document.write('<body > <h1>Hospital Management System<br><p>Patient Details</p><br>');
+            // a.document.write(divContents);
+            // a.document.write('</body></html>');
+            // a.document.close();
+            // a.print();
+
+			 var printContents = document.getElementById('printpage').innerHTML;
+			var originalContents = document.body.innerHTML;
+
+			document.body.innerHTML = printContents;
+
+			window.print();
+
+			document.body.innerHTML = originalContents;
 }
 </script>
 

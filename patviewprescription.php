@@ -13,7 +13,7 @@ if(isset($_GET[delid]))
 }
 ?>
 
-<div id= "print" class="container-fluid">
+<div id= "printpage" class="container-fluid">
    <div class="block-header">
     <h2 class="text-center">View Prescription Record</h2>
    </div>
@@ -87,6 +87,8 @@ if(isset($_GET[delid]))
               </tr>";
             }
             ?>
+            </div>
+          
             
           </tbody>
         </table>
@@ -98,7 +100,7 @@ if(isset($_GET[delid]))
     ?>        <p>&nbsp;</p>
  </div>
  <!-- testing printpage here  -->
-<div id ="data"></div>
+<div id ="printpage1"></div>
 </div>
  </div>
  <div class="clear"></div>
@@ -110,11 +112,29 @@ include("adfooter.php");
 <script>
   function myFunction()
   {
-    var print = document.getElementbyId('print').innerHTML;
-    var data = document.getElementbyId('data').innerHTML;
-    document.getElementbyId('printpage').innerHTML=print;
-    alert(print);
+    // var print = document.getElementbyId('print').innerHTML;
+    // var data = document.getElementbyId('data').innerHTML;
+    // document.getElementbyId('printpage').innerHTML=print;
+    // alert(print);
 //     window.print();
 //     document.getElementbyId('printpage').innerHTML=print;
+            // var divContents = document.getElementById("printpage").innerHTML;
+            // var a = document.open('', '', 'height=500, width=500');
+            // a.document.write('<html>');
+            // a.document.write('<body > <h1>Hospital Management System<br>');
+            // a.document.write(divContents);
+            // a.document.write('</body></html>');
+            // a.document.close();
+            // a.print();
+
+
+            var printContents = document.getElementById('printpage').innerHTML;
+			var originalContents = document.body.innerHTML;
+
+			document.body.innerHTML = printContents;
+
+			window.print();
+
+			document.body.innerHTML = originalContents;
   }
 </script>
