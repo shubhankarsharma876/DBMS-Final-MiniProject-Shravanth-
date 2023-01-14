@@ -35,7 +35,6 @@ $rsbilling_records = mysqli_fetch_array($qsqlbilling_records);
         </tr>
          
 		<tr>
-			z
           <th scope="col"><div align="right"></div></th>
           <td></td>
           <th scope="col"><div align="right">Bill Amount &nbsp; </div></th>
