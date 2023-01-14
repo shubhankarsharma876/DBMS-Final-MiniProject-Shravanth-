@@ -35,6 +35,7 @@ $rsbilling_records = mysqli_fetch_array($qsqlbilling_records);
         </tr>
          
 		<tr>
+			z
           <th scope="col"><div align="right"></div></th>
           <td></td>
           <th scope="col"><div align="right">Bill Amount &nbsp; </div></th>
@@ -50,25 +51,28 @@ $rsbilling_records = mysqli_fetch_array($qsqlbilling_records);
   &nbsp;$ <?php echo $billamt; ?></td>
         </tr>
         <tr>
-          <th width="442" scope="col"><div align="right"></div></th>
-          <td width="413">&nbsp;</td>
-          <th width="442" scope="col"><div align="right">Tax Amount (5%) &nbsp; </div></th>
-          <td width="413">&nbsp;$ <?php echo $taxamt = 5 * ($billamt / 100); ?></td>
+          <!-- <th width="442" scope="col"><div align="right"></div></th> -->
+          <!-- <td width="413">&nbsp;</td> -->
+          <!-- <th width="442" scope="col"><div align="right">Tax Amount (5%) &nbsp; </div></th>
+          <td width="413">&nbsp;$ </td> -->
        	</tr>
          
-		<tr>
+		<!-- <tr>
 		  <th scope="col"><div align="right">Disount reason</div></th>
-		  <td rowspan="4" valign="top"><?php echo $rsbilling_records[discountreason]; ?></td>
+		  <td rowspan="4" valign="top"></td>
 		  <th scope="col"><div align="right">Discount &nbsp; </div></th>
-		  <td>&nbsp;$ <?php echo $rsbilling_records[discount]; ?></td>
-	    </tr>
+		  <td>&nbsp;$ </td>
+	    </tr> -->
         
 		<tr>
-		  <th rowspan="3" scope="col">&nbsp;</th>
+		<th rowspan="1" scope="col">&nbsp;</th>
+		  <th rowspan="1" scope="col">&nbsp;</th>
 		  <th scope="col"><div align="right">Grand Total &nbsp; </div></th>
-		  <td>&nbsp;$ <?php echo $grandtotal = ($billamt + $taxamt)  - $rsbilling_records[discount] ; ?></td>
+		  <td>&nbsp;$ <?php echo $grandtotal = ($billamt)?></td>
 	    </tr>
 		<tr>
+		<th rowspan="1" scope="col">&nbsp;</th>
+		  <th rowspan="1" scope="col">&nbsp;</th>
 		  <th scope="col"><div align="right">Paid Amount </div></th>
 		  <td>$ <?php
 		  	$sqlpayment ="SELECT sum(paidamount) FROM payment where appointmentid='$billappointmentid'";
@@ -78,6 +82,8 @@ $rsbilling_records = mysqli_fetch_array($qsqlbilling_records);
 		   ?></td>
 	    </tr>
 		<tr>
+		<th rowspan="1" scope="col">&nbsp;</th>
+		  <th rowspan="1" scope="col">&nbsp;</th>
 		  <th scope="col"><div align="right">Balance Amount</div></th>
 		  <td>$ <?php echo $balanceamt = $grandtotal - $rspayment[0]  ; ?></td>
 	    </tr>
