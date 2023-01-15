@@ -21,7 +21,7 @@ else
    $sql ="UPDATE patient SET status='Active' WHERE patientid='$_POST[select4]'";
    $qsql=mysqli_query($con,$sql);
 
-   $sql ="INSERT INTO appointment(patientid, departmentid, appointmentdate, appointmenttime, doctorid, status, app_reason) values('$_POST[select4]','$_POST[select5]','$_POST[appointmentdate]','$_POST[time]','$_POST[select6]','$_POST[select]','$_POST[appreason]')";
+   $sql ="INSERT INTO appointment(appointmenttype,patientid, departmentid, appointmentdate, appointmenttime, doctorid, status, app_reason) values('OFFLINE','$_POST[select4]','$_POST[select5]','$_POST[appointmentdate]','$_POST[time]','$_POST[select6]','$_POST[select]','$_POST[appreason]')";
    if($qsql = mysqli_query($con,$sql))
    {
 

@@ -192,7 +192,7 @@ if(isset($_GET[patientid]))
                                    else
                                    {
                                     ?>
-                                                <select name="select6" id="select6" class="selectpicker">
+                                                <select name="select6" id="select6" class="selectpicker" required>
                                                     <option value="" selected="" hidden="">Select Gender</option>
                                                     <?php
                                         $arr = array("Male","Female");
@@ -222,7 +222,7 @@ if(isset($_GET[patientid]))
                                             <label>
                                                 <input placeholder="Appointment Date" type="text" class="form-control"
                                                     min="<?php echo date("Y-m-d"); ?>" name="appointmentdate"
-                                                    onfocus="(this.type='date')" id="appointmentdate"><i
+                                                    onfocus="(this.type='date')" id="appointmentdate" required><i
                                                     class="ion-calendar"></i>
                                             </label>
 
@@ -231,7 +231,7 @@ if(isset($_GET[patientid]))
                                             <label>
                                                 <input placeholder="Appointment Time" type="text"
                                                     onfocus="(this.type='time')" class="form-control"
-                                                    name="appointmenttime" id="appointmenttime"><i
+                                                    name="appointmenttime" id="appointmenttime" required><i
                                                     class="ion-ios-clock"></i>
                                             </label>
 
@@ -240,7 +240,7 @@ if(isset($_GET[patientid]))
                                             <label>
 
                                                 <select name="department" class="selectpicker" id="department"
-                                                    >
+                                                    required>
                                                     <option value="">Select Department</option>
                                                     <?php
                                 $sqldept = "SELECT * FROM department WHERE status='Active'";
@@ -258,7 +258,7 @@ if(isset($_GET[patientid]))
                                         <li class="col-sm-6">
                                             <label>
                                                 <select name="doct" class="selectpicker" id="department"
-                                                    >
+                                                    required>
                                                     <option value="">Select Doctor</option>
                                                     <?php
                                                     $sqldept = "SELECT * FROM doctor WHERE status='Active'";
