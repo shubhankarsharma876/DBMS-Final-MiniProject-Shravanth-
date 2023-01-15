@@ -91,7 +91,7 @@ if(isset($_GET[delid]))
 						echo 	" - " . $rstreatment2[treatmenttype];
 					} 
 
-					echo " </td><td>$ $rs[bill_amount]</td></tr>";
+					echo " </td><td>₹ $rs[bill_amount]</td></tr>";
 					$billamt = $billamt +  $rs[bill_amount];
 				}
 				?>
@@ -102,7 +102,7 @@ if(isset($_GET[delid]))
 				<tr>
 					<td></td>
 					<td>Total Earnings :</td>
-					<td>$ <?php echo ($billamt + $taxamt)  - $rsbilling_records[discount] ; ?></td>
+					<td>₹ <?php echo ($billamt + $taxamt)  - $rsbilling_records[discount] ; ?></td>
 				</tr>
 			</tfoot>
 		</table>

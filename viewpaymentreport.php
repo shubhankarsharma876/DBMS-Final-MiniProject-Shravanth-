@@ -67,7 +67,7 @@ $rsbilling_records = mysqli_fetch_array($qsqlbilling_records);
 		<th rowspan="1" scope="col">&nbsp;</th>
 		  <th rowspan="1" scope="col">&nbsp;</th>
 		  <th scope="col"><div align="right">Grand Total &nbsp; </div></th>
-		  <td>&nbsp;$ <?php echo $grandtotal = ($billamt)?></td>
+		  <td>&nbsp;₹ <?php echo $grandtotal = ($billamt)?></td>
 	    </tr>
 		<tr>
 		<th rowspan="1" scope="col">&nbsp;</th>
