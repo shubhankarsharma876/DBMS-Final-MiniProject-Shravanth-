@@ -237,7 +237,7 @@ $tim = date("H:i:s");
                                 class="zmdi zmdi-calendar-check"></i><span>Appointment</span> </a>
                         <ul class="ml-menu">
                             <li><a href="viewappointment.php" >View Appointments</a></li>
-                            <li><a href="patientappointment.php?patientid=<?echo $x?>" >Add Appointment</a></li>
+                            <li><a href="patientappointment2.php?patientid=<?echo $x?>" >Add Appointment</a></li>
                             
                         </ul>
                     </li>
