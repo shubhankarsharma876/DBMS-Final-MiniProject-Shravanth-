@@ -2,6 +2,7 @@
 session_start();
 error_reporting(0);
 include("dbconnection.php");
+date_default_timezone_set("Asia/Kolkata");
 $dt = date("Y-m-d");
 $tim = date("H:i:s");
 ?>
@@ -236,7 +237,7 @@ $tim = date("H:i:s");
                                 class="zmdi zmdi-calendar-check"></i><span>Appointment</span> </a>
                         <ul class="ml-menu">
                             <li><a href="viewappointment.php" >View Appointments</a></li>
-                            <li><a href="patientappointment.php?patientid=<?echo $x?>" >Add Appointment</a></li>
+                            <li><a href="patientappointment2.php?patientid=<?echo $x?>" >Add Appointment</a></li>
                             
                         </ul>
                     </li>

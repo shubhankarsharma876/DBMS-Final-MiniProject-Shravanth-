@@ -8,21 +8,7 @@ if(isset($_POST[submit]))
 	{
 		$lastinsid =$_SESSION[patientid];
 	}
-	else
-	{
-		$dt = date("Y-m-d");
-		$tim = date("H:i:s");
-		$sql ="INSERT INTO patient(patientname,admissiondate,admissiontime,address,city,mobileno,loginid,password,pincode,bloodgroup,gender,dob,status) values('$_POST[patiente]','$dt','$tim','$_POST[textarea]','$_POST[city]','$_POST[mobileno]','$_POST[loginid]','$_POST[password]','$_POST[pincode]','$_POST[bloodgroup]','$_POST[select6]','$_POST[dob]','Active')";
-		if($qsql = mysqli_query($con,$sql))
-		{
-			/* echo "<script>alert('patient record inserted successfully...');</script>"; */
-		}
-		else
-		{
-			echo mysqli_error($con);
-		}
-		$lastinsid = mysqli_insert_id($con);
-	}
+
 	
 	$sqlappointment="SELECT * FROM appointment WHERE appointmentdate='$_POST[appointmentdate]' AND appointmenttime='$_POST[appointmenttime]' AND doctorid='$_POST[doct]' AND status='Approved'";
 	$qsqlappointment = mysqli_query($con,$sqlappointment);
@@ -32,7 +18,7 @@ if(isset($_POST[submit]))
 	}
 	else
 	{
-		$sql ="INSERT INTO appointment(appointmenttype,patientid,appointmentdate,appointmenttime,app_reason,status,departmentid,doctorid) values('ONLINE','$lastinsid','$_POST[appointmentdate]','$_POST[appointmenttime]','$_POST[app_reason]','Pending','$_POST[department]','$_POST[doct]')";
+		$sql ="INSERT INTO appointment(appointmenttype,patientid,appointmentdate,appointmenttime,app_reason,status,departmentid,doctorid) values('ONLINE','$_POST[patientid]','$_POST[appointmentdate]','$_POST[appointmenttime]','$_POST[app_reason]','Pending','$_POST[department]','$_POST[doct]')";
 		if($qsql = mysqli_query($con,$sql))
 		{
 			echo "<script>alert('Appointment record inserted successfully...');</script>";
@@ -117,10 +103,34 @@ if(isset($_GET[patientid]))
                                 <form method="post" action="" name="frmpatapp" onSubmit="return validateform()"
                                     class="appointment-form">
                                     <ul class="row">
+
+
+
+
+
+
+                                            <li class="col-sm-6">
+                                            <label>                                            
+                                                <input placeholder="Patient's ID" type="text" class="form-control"
+                                                    name="patientid" id="patientid"
+                                                    value="<?php echo $rspatient[patientid];  ?>"
+                                                    <?php echo $readonly; ?>>
+                                                <i class="icon-user"></i>
+                                            </label>
+                                        </li>
+
+
+
+
+
+
+
+
+
                                         <li class="col-sm-6">
                                             <label>
 
-
+                                            
                                                 <input placeholder="Patient's Name" type="text" class="form-control"
                                                     name="patiente" id="patiente"
                                                     value="<?php echo $rspatient[patientname];  ?>"
@@ -145,13 +155,6 @@ if(isset($_GET[patientid]))
                                             </label>
 
                                         </li>
-                                         <li class="col-sm-6">
-                                            <label><input placeholder="Pincode" type="text" class="form-control"
-                                                    name="pincode" id="pincode" value="<?php echo $rspatient[pincode];  ?>"
-                                                    <?php echo $readonly; ?>><i class="icon-pin"></i>
-                                            </label>
-
-                                        </li>
                                         <li class="col-sm-6">
                                             <label>
                                                 <input placeholder="Contact Number" type="text" class="form-control"
@@ -161,6 +164,23 @@ if(isset($_GET[patientid]))
                                             </label>
 
                                         </li>
+                                        <?php
+                            if(!isset($_SESSION[patientid]))
+                            {        
+                                ?>
+                                        <li class="col-sm-6">
+                                            <label>
+                                                <input placeholder="Login ID" type="text" class="form-control"
+                                                    name="loginid" id="loginid"
+                                                    value="<?php echo $rspatient[loginid];  ?>"
+                                                    <?php echo $readonly; ?>><i class="icon-login"></i>
+                                            </label>
+
+                                        </li>
+                            
+                                        <?php
+                            }
+                            ?>
                                         <li class="col-sm-6">
                                             <label>
 
@@ -172,7 +192,7 @@ if(isset($_GET[patientid]))
                                    else
                                    {
                                     ?>
-                                                <select name="select6" id="select6" class="selectpicker">
+                                                <select name="select6" id="select6" class="selectpicker" required>
                                                     <option value="" selected="" hidden="">Select Gender</option>
                                                     <?php
                                         $arr = array("Male","Female");
@@ -187,34 +207,6 @@ if(isset($_GET[patientid]))
                                 ?>
                                                 <i class="ion-transgender"></i>
                                             </label>
-                                            
-                                        <?php
-                            if(!isset($_SESSION[patientid]))
-                            {        
-                                ?>
-                                        <li class="col-sm-6">
-                                            <label>
-                                                <input placeholder="Login ID" type="text" class="form-control"
-                                                    name="loginid" id="loginid"
-                                                    value="<?php echo $rspatient[loginid];  ?>"
-                                                    <?php echo $readonly; ?>><i class="icon-login"></i>
-                                            </label>
-
-                                        </li>
-                                        <li class="col-sm-6">
-                                            <label>
-
-                                                <input placeholder="Password" type="password" class="form-control"
-                                                    name="password" id="password"
-                                                    value="<?php echo $rspatient[password];  ?>"
-                                                    <?php echo $readonly; ?>><i class="icon-lock"></i>
-                                            </label>
-
-                                        </li>
-                                        <?php
-                            }
-                            ?>
-                                        
 
                                         </li>
                                         <li class="col-sm-6">
@@ -225,30 +217,12 @@ if(isset($_GET[patientid]))
                                                     class="ion-calendar"></i>
                                             </label>
 
-                                            <li class="col-sm-6">
-                                            <label>
-                                                <select name="bloodgroup" id="bloodgroup" class="selectpicker">
-                                                    <option value="" selected="" hidden="">Blood Group</option>
-                                                    <?php
-                                        $arr = array("A+","A-","B+","B-","O+","O-","AB+","AB-");
-                                        foreach($arr as $val)
-                                        {
-                                            echo "<option value='$val'>$val</option>";
-                                        }
-                                        ?>
-                                                </select>
-                                                <?php
-                                ?>
-                                                <i class="ion-transgender"></i>
-                                            </label>
-                                        </li>
-
                                         </li>
                                         <li class="col-sm-6">
                                             <label>
                                                 <input placeholder="Appointment Date" type="text" class="form-control"
                                                     min="<?php echo date("Y-m-d"); ?>" name="appointmentdate"
-                                                    onfocus="(this.type='date')" id="appointmentdate"><i
+                                                    onfocus="(this.type='date')" id="appointmentdate" required><i
                                                     class="ion-calendar"></i>
                                             </label>
 
@@ -257,7 +231,7 @@ if(isset($_GET[patientid]))
                                             <label>
                                                 <input placeholder="Appointment Time" type="text"
                                                     onfocus="(this.type='time')" class="form-control"
-                                                    name="appointmenttime" id="appointmenttime"><i
+                                                    name="appointmenttime" id="appointmenttime" required><i
                                                     class="ion-ios-clock"></i>
                                             </label>
 
@@ -266,7 +240,7 @@ if(isset($_GET[patientid]))
                                             <label>
 
                                                 <select name="department" class="selectpicker" id="department"
-                                                    >
+                                                    required>
                                                     <option value="">Select Department</option>
                                                     <?php
                                 $sqldept = "SELECT * FROM department WHERE status='Active'";
@@ -284,7 +258,7 @@ if(isset($_GET[patientid]))
                                         <li class="col-sm-6">
                                             <label>
                                                 <select name="doct" class="selectpicker" id="department"
-                                                    >
+                                                    required>
                                                     <option value="">Select Doctor</option>
                                                     <?php
                                                     $sqldept = "SELECT * FROM doctor WHERE status='Active'";

@@ -132,7 +132,7 @@ if($rs[bill_type]  == "Prescription charge")
 		  <th></th>
 		  <th></th>
           <th scope="col"><div  align="right" >Bill Amount &nbsp; </div></th>
-          <td>&nbsp;$ <?php echo $billamt; ?></td>
+          <td>&nbsp;₹ <?php echo $billamt; ?></td>
         </tr>
         <!-- <tr>
           <th width="442" scope="col"><div align="right">Tax Amount (5%) &nbsp; </div></th>
@@ -156,7 +156,7 @@ if($rs[bill_type]  == "Prescription charge")
 		<th> </th>
 		  <!-- <th rowspan="3" scope="col">&nbsp;</th> -->
 		  <th scope="col"><div align="right">Grand Total &nbsp; </div></th>
-		  <td >&nbsp;$ <?php echo ($billamt) ; ?></td>
+		  <td >&nbsp;₹ <?php echo ($billamt) ; ?></td>
 	    </tr>
       </tbody>
     </table>

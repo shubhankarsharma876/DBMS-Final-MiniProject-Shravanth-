@@ -41,7 +41,7 @@ if(file_exists("treatmentfiles/$rs[uploads]"))
 	}
 }
 					echo "</td>";
-			echo "<td>$$rs[treatment_cost]</td></tr>";
+			echo "<td>₹$rs[treatment_cost]</td></tr>";
 		}
 		?>
 </table>
